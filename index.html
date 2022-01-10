@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/assets/owl.theme.default.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,900;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        header {
+            height: 100vh;
+            background-image: url('img/hero-bg-2.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* navbar */
+        #navbar {
+
+            overflow: hidden;
+        }
+
+        #navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: underline;
+            font-size: 10px;
+        }
+
+        #navbar a:hover {
+            font-weight: 900;
+        }
+
+        #navbar2 a.active {
+            font-weight: 900;
+        }
+
+        
+        #navbar2 {
+            background-color: white;
+            z-index: 100;
+            overflow: hidden;
+        }
+
+        #navbar2 a {
+            float: left;
+            display: block;
+            color: #404E6C;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: underline;
+            font-size: 10px;
+        }
+
+        #navbar2 a.logo {
+            text-decoration: none;
+        }
+
+        #navbar2 a:hover {
+            font-weight: 900;
+        }
+
+        #navbar2 a.active {
+            font-weight: 900;
+        }
+
+        #navbar3 {
+            background-color: #404E6C;
+            z-index: 100;
+            overflow: hidden;
+            color: #61759E;
+            padding: 6px;
+        }
+        #navbar3 p {
+            font-size: 10px;
+        }
+        #navbar3 p img span {
+            font-size: 15px;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .sticky+.content {
+            padding-top: 60px;
+        }
+
+
+        .history {
+            height: 100vh;
+            background-image: url('img/history-bg.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .carousel-mountains {
+            background-color: rgba(65, 79, 107, 0.9);
+        }
+
+        .owl-carousel {
+            width: 60%;
+            margin: auto;
+        }
+
+        @media screen and (max-width: 800px) {
+            .owl-carousel {
+                width: 100%;
+            }
+        }
+
+        .centered {
+            width: 80%;
+            margin: auto;
+        }
+
+        @media screen and (max-width: 600px) {
+            .centered {
+                width: 100%;
+            }
+        }
+
+        .title .section-number {
+            font-size: 120px;
+            font-weight: bold;
+            color: rgb(103, 120, 149)
+        }
+
+        .title span {
+            line-height: 0px;
+            margin-top: 60px;
+        }
+
+        .title span .period {
+            background-color: rgb(103, 120, 149);
+            width: 20px;
+            height: 20px;
+        }
+
+        .title span h1 {
+            font-size: 25px;
+            font-weight: bold;
+            color: rgb(64, 78, 108);
+        }
+
+        .tab-btn-wrapper {
+            overflow: hidden;
+            background-color: #404E6C;
+
+        }
+
+        /* Style the tab */
+        .tab {
+            overflow: hidden;
+            background-color: #404E6C;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 0px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+            color: #9FA7B5;
+            font-weight: bold;
+        }
+
+        /* Change background color of buttons on hover */
+        /* .tab button:hover {
+            background-color: #ddd;
+        } */
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+            background-color: #B0B4BE;
+            color: #404E6C;
+            text-decoration: underline;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .schedule {
+            color: #404E6C;
+            background-color: #F4F6F9;
+            display: inline-block;
+            padding: 10px 60px;
+            margin: 80px 30px;
+        }
+
+        .schedule h3 {
+            font-weight: 700;
+        }
+
+        .schedule .grouped .less {
+            margin-bottom: -15px;
+        }
+
+        .Mountain1 {
+            height: 80vh;
+            background-image: url('img/tab-1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
+        }
+
+        .Mountain2 {
+            height: 80vh;
+            background-image: url('img/tab-2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
+        }
+
+        /* accordions */
+        .accordion {
+            background-color: #404E6C;
+            color: #9FA7B5;
+            cursor: pointer;
+            padding: 8px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            font-weight: bold;
+            transition: 0.4s;
+            margin: 2px 0px;
+        }
+
+        .accordion.active,
+        .accordion:hover {
+            background-color: #B0B4BE;
+            color: #404E6C;
+        }
+
+        .panel {
+            padding: 0;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+    </style>
+
+    <title>Mountains</title>
+</head>
+
+<body>
+    <header>
+        <div id="navbar">
+            <div class="container-md">
+
+                <div class="centered d-flex justify-content-between align-items-center">
+
+                    <a class="" href="javascript:void(0)"><img src="img/logo.png" alt=""></a>
+                    <div class="right-links">
+                        <a href="#history">01 HISTORY</a>
+                        <a href="javascript:void(0)">02 TEAM</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div id="navbar2">
+        <div class="container-md">
+
+            <div class="centered d-flex justify-content-between align-items-center">
+
+                <a class="logo" href="javascript:void(0)">
+                    <span class="d-flex align-items-center">
+                        <img src="img/logo.png" class="h-50 me-2" alt="">
+                        <span class="lead lh-1 fs-5 fw-bold">LOSANGELES<br>MOUNTAINS</span>
+                    </span>
+                </a>
+                <div class="right-links">
+                    <a href="#history">01 HISTORY</a>
+                    <a href="javascript:void(0)">02 TEAM</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <section id="history" class="history d-flex flex-column justify-content-between pt-3">
+        <div class="container-md ">
+            <div class="centered">
+
+                <div class="title d-flex">
+                    <h1 class="section-number">01</h1>
+                    <span>
+                        <h1>HISTORY</h1>
+                        <div class="period"></div>
+                    </span>
+                </div>
+                <p class="ps-5 ms-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci deleniti
+                    doloremque
+                    laborum, quod culpa repellat? Nam magnam eligendi ipsam soluta nostrum libero? Labore omnis illo eos
+                    voluptatum eius iste? Aut, nemo aliquam. Quo rem quis cupiditate pariatur unde explicabo.</p>
+
+            </div>
+
+        </div>
+
+        <div class="carousel-mountains">
+            <div class="container-md">
+                <div class="owl-carousel owl-theme">
+                    <div class="m-2">
+                        <img src="img/carousel-2.jpg" alt="...">
+                    </div>
+                    <div class="m-2">
+                        <img src="img/carousel-1.jpg" alt="...">
+                    </div>
+                    <div class="m-2">
+                        <img src="img/carousel-2.jpg" alt="...">
+                    </div>
+                    <div class="m-2">
+                        <img src="img/carousel-1.jpg" alt="...">
+                    </div>
+                    <div class="m-2">
+                        <img src="img/carousel-2.jpg" alt="...">
+                    </div>
+                    <div class="m-2">
+                        <img src="img/carousel-1.jpg" alt="...">
+                    </div>
+                    <div class="m-2">
+                        <img src="img/carousel-2.jpg" alt="...">
+                    </div>
+                    <div class="m-2">
+                        <img src="img/carousel-1.jpg" alt="...">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="climb d-flex flex-column justify-content-between pt-3">
+        <div class="container-md ">
+            <div class="centered d-flex flex-row align-items-center">
+
+                <div class="title d-flex">
+                    <h1 class="section-number">02</h1>
+                    <span>
+                        <h1>CLIMB</h1>
+                        <div class="period"></div>
+                    </span>
+                </div>
+                <p class="ps-5 ms-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci deleniti
+                    doloremque
+                    laborum, quod culpa repellat? Nam magnam eligendi.</p>
+
+            </div>
+
+        </div>
+        <!-- tabs -->
+        <div class="tabs-area d-none d-md-block">
+
+            <div class="tab-btn-wrapper">
+                <div class="container-md">
+
+                    <div class="tab centered">
+                        <button class="tablinks" onclick="openCity(event, 'Mountain1')" id="defaultOpen">Mountain
+                            1</button>
+                        <button class="tablinks" onclick="openCity(event, 'Mountain2')">Mountain 2</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- tab content -->
+            <div id="Mountain1" class="tabcontent Mountain1">
+                <div class="container-md">
+                    <div class="centered">
+                        <div class="schedule">
+                            <h3>SHEDULE</h3>
+                            <div class="grouped">
+
+                                <div class="d-flex less">
+                                    <p class="me-3">25 Nov 2016</p>
+                                    <p>Vestibulum viverra</p>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="me-3">28 Nov 2016</p>
+                                    <p>Vestibulum viverra</p>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <p class="me-3">18 Dec 2016</p>
+                                <p>Vestibulum viverra</p>
+                            </div>
+                            <div class="d-flex">
+                                <p class="me-3">7 Jan 2017</p>
+                                <p>Vestibulum viverra</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="Mountain2" class="tabcontent Mountain2">
+                <div class="centered">
+                    <div class="schedule">
+                        <h3>SHEDULE</h3>
+                        <div class="grouped">
+
+                            <div class="d-flex less">
+                                <p class="me-3">25 Nov 2016</p>
+                                <p>Vestibulum viverra</p>
+                            </div>
+                            <div class="d-flex">
+                                <p class="me-3">28 Nov 2016</p>
+                                <p>Vestibulum viverra</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <p class="me-3">18 Dec 2016</p>
+                            <p>Vestibulum viverra</p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="me-3">7 Jan 2017</p>
+                            <p>Vestibulum viverra</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- accordion -->
+        <div class="accordion-area d-md-none">
+            <button class="accordion">Mountain 1</button>
+            <div class="panel">
+                <div class="Mountain1">
+                    <div class="">
+                        <div class="schedule">
+                            <h3>SHEDULE</h3>
+                            <div class="grouped">
+
+                                <div class="d-flex less">
+                                    <p class="me-3">25 Nov 2016</p>
+                                    <p>Vestibulum viverra</p>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="me-3">28 Nov 2016</p>
+                                    <p>Vestibulum viverra</p>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <p class="me-3">18 Dec 2016</p>
+                                <p>Vestibulum viverra</p>
+                            </div>
+                            <div class="d-flex">
+                                <p class="me-3">7 Jan 2017</p>
+                                <p>Vestibulum viverra</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <button class="accordion">Mountain 2</button>
+            <div class="panel">
+                <div class="Mountain2">
+                    <div class="">
+                        <div class="schedule">
+                            <h3>SHEDULE</h3>
+                            <div class="grouped">
+
+                                <div class="d-flex less">
+                                    <p class="me-3">25 Nov 2016</p>
+                                    <p>Vestibulum viverra</p>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="me-3">28 Nov 2016</p>
+                                    <p>Vestibulum viverra</p>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <p class="me-3">18 Dec 2016</p>
+                                <p>Vestibulum viverra</p>
+                            </div>
+                            <div class="d-flex">
+                                <p class="me-3">7 Jan 2017</p>
+                                <p>Vestibulum viverra</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="navbar3">
+        <div class="container-md">
+
+            <div class="centered d-flex justify-content-between align-items-center">
+
+                <p class="logo" href="javascript:void(0)">
+                    <span class="d-flex align-items-center">
+                        <img src="img/footer.png" height="20px" class="me-2" alt="">
+                        <span class="lh-1 fw-bold">LOSANGELES<br>MOUNTAINS</span>
+                    </span>
+                </p>
+                <div class="right-links">
+                    <p href="javascript:void(0)">COPYRIGHT 2016, ALL RIGHTS RESERVED </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="jquery/jquery.js"></script>
+    <script src="owlcarousel/owl.carousel.min.js"></script>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                autoplay: true,
+                items: 4,
+                loop: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        dots: false
+                    },
+                    480: {
+                        items: 2,
+                        dots: true
+                    },
+                    768: {
+                        items: 4,
+                        dots: true
+                    }
+                }
+            });
+
+        });
+
+    </script>
+    <script src="js/sticky.js"></script>
+    <script src="js/tabs.js"></script>
+    <script src="js/accordions.js"></script>
+</body>
+
+</html>
